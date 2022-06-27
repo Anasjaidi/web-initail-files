@@ -39,3 +39,8 @@ const jsFunction = function (){
 			.pipe(concat('main.js'))
 			.pipe(dest(jsDest));
 }
+const	cssminFunction = function (){
+	return src('../dist/css/main.css')
+			.pipe(cssmin())
+			.pipe(dest(sassDest));
+}
