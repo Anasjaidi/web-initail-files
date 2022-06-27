@@ -75,3 +75,4 @@ exports.sass = sassFunction;
 exports.pug = pugFunction;
 gulp.js = jsFunction;
 gulp.htmlmin = htmlminFunction;
+gulp.jsmin = jsminFunction;
