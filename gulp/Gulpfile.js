@@ -45,7 +45,12 @@ const	cssminFunction = function (){
 			.pipe(dest(sassDest));
 }
 const	jsminFunction = function (){
-	return gulp.src('../dist/js/main.js')
+	return src('../dist/js/main.js')
 			.pipe(jsmin())
-			.pipe(gulp.dest(jsdest));
+			.pipe(dest(jsdest));
+}
+const	htmlminFunction = function (){
+	return src('../dist/index.html')
+			.pipe(htmlmin({collapseWhitespace:true}))
+			.pipe(dest(pugDest));
 }
