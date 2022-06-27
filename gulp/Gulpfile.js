@@ -11,3 +11,13 @@ const	gulp = require('gulp') ,
 		prefixer = require('gulp-autoprefixer'),
 		concat = require('gulp-concat'),
 		live = require('browser-sync').create();
+
+// create files and dests vars
+const	pugFiles = './index.pug',
+		pugDest = '../dist';
+const	sassFiles = './sass/**/*.sass',
+		sassDest = '../dist/css';
+const	jsFiles = './scripts/**/*.js',
+		jsDest = '../dist/js';
+const	imgFiles = './img/**/*',
+		imgDest = '../dist/img';
