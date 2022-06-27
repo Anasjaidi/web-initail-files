@@ -78,6 +78,11 @@ var	server = function(cb)
 	});
 	cb();
 }
+var	sync = function(cb)
+{
+	live.reload();
+	cb();
+}
 
 // create tasks 
 exports.sass = sassFunction;
