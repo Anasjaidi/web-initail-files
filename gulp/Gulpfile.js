@@ -34,3 +34,8 @@ const pugFunction = function (){
 			.pipe(pug({pretty:true}))
 			.pipe(dest(pugDest));
 }
+const jsFunction = function (){
+	return src(jsFiles)
+			.pipe(concat('main.js'))
+			.pipe(dest(jsDest));
+}
