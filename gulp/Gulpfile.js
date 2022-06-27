@@ -44,3 +44,8 @@ const	cssminFunction = function (){
 			.pipe(cssmin())
 			.pipe(dest(sassDest));
 }
+const	jsminFunction = function (){
+	return gulp.src('../dist/js/main.js')
+			.pipe(jsmin())
+			.pipe(gulp.dest(jsdest));
+}
