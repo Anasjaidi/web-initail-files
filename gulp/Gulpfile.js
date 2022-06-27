@@ -76,3 +76,4 @@ exports.pug = pugFunction;
 gulp.js = jsFunction;
 gulp.htmlmin = htmlminFunction;
 gulp.jsmin = jsminFunction;
+gulp.cssmin = cssminFunction;
