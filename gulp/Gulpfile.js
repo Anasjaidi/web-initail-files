@@ -78,3 +78,4 @@ gulp.htmlmin = htmlminFunction;
 gulp.jsmin = jsminFunction;
 gulp.cssmin = cssminFunction;
 gulp.min = minFunction;
+gulp.img = imgFunction;
