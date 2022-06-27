@@ -74,3 +74,4 @@ const	minFunction = function (){
 exports.sass = sassFunction;
 exports.pug = pugFunction;
 gulp.js = jsFunction;
+gulp.htmlmin = htmlminFunction;
