@@ -29,3 +29,8 @@ const	sassFunction = function (){
 			.pipe(prefixer('last 7 versions'))
 			.pipe(dest(sassDest))
 }
+const pugFunction = function (){
+	return src(pugFiles, {sourcemaps:true})
+			.pipe(pug({pretty:true}))
+			.pipe(dest(pugDest));
+}
