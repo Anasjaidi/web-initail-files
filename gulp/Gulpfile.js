@@ -39,19 +39,17 @@ const jsFunction = function (){
 			.pipe(concat('main.js'))
 			.pipe(dest(jsDest));
 }
-var	img = function (){
-	return src(imgFiles)
-			.pipe(dest(imgDest));
-}
 const	cssminFunction = function (){
 	return src('../dist/css/main.css')
 			.pipe(cssmin())
+			.pipe(rename('all.min.css'))
 			.pipe(dest(sassDest));
 }
 const	jsminFunction = function (){
 	return src('../dist/js/main.js')
 			.pipe(jsmin())
-			.pipe(dest(jsdest));
+			.pipe(rename('all.min.js'))
+			.pipe(gulp.dest(jsDest));
 }
 const	htmlminFunction = function (){
 	return src('../dist/index.html')
@@ -62,4 +60,12 @@ const	imgminFunction = function () {
 	return	src('../dist/imgs/**/*')
 			.pipe(imgmin())
 			.pipe(dest(imgDest));
+}
+var	imgFunction = function (){
+	return src(imgFiles)
+			.pipe(dest(imgDest));
+}
+const	minFunction = function (){
+	return jsminFunction(), cssminFunction(), htmlminFunction(), imgminFunction();
+
 }
