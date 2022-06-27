@@ -69,6 +69,15 @@ const	minFunction = function (){
 	return jsminFunction(), cssminFunction(), htmlminFunction(), imgminFunction();
 
 }
+var	server = function(cb)
+{
+	live.init({
+		server : {
+			baseDir: '../dist'
+		}
+	});
+	cb();
+}
 
 // create tasks 
 exports.sass = sassFunction;
