@@ -69,3 +69,6 @@ const	minFunction = function (){
 	return jsminFunction(), cssminFunction(), htmlminFunction(), imgminFunction();
 
 }
+
+// create tasks 
+exports.sass = sassFunction;
