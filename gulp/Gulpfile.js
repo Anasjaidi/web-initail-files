@@ -54,3 +54,8 @@ const	htmlminFunction = function (){
 			.pipe(htmlmin({collapseWhitespace:true}))
 			.pipe(dest(pugDest));
 }
+const	imgminFunction = function () {
+	return	src('../dist/imgs/**/*')
+			.pipe(imgmin())
+			.pipe(dest(imgDest));
+}
