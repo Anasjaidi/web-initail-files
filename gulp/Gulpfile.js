@@ -21,3 +21,11 @@ const	jsFiles = './scripts/**/*.js',
 		jsDest = '../dist/js';
 const	imgFiles = './img/**/*',
 		imgDest = '../dist/img';
+
+// create tasks function
+const	sassFunction = function (){
+	return src(sassFiles, {sourcemaps:true})
+			.pipe(sass())
+			.pipe(prefixer('last 7 versions'))
+			.pipe(dest(sassDest))
+}
