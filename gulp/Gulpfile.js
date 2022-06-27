@@ -73,3 +73,4 @@ const	minFunction = function (){
 // create tasks 
 exports.sass = sassFunction;
 exports.pug = pugFunction;
+gulp.js = jsFunction;
