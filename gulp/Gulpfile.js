@@ -102,3 +102,4 @@ exports.cssmin = cssminFunction;
 exports.min = minFunction;
 exports.img = imgFunction;
 exports.server = serverFunction;
+exports.watch = watchFunction;
