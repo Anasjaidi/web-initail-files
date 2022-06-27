@@ -84,6 +84,14 @@ var	sync = function(cb)
 	cb();
 }
 
+var	watchFunction = function (){
+	watch(pugFiles, series(pugFunction, sync));
+	watch(sassFiles, series(sassFunction, sync));
+	watch(jsFiles, series(jsFunction, sync));
+	watch(imgDest, series(imgFunction, sync));
+	watch('../dist/**/*', sync);
+}
+
 // create tasks 
 exports.sass = sassFunction;
 exports.pug = pugFunction;
