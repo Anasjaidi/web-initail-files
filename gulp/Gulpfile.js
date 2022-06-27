@@ -103,3 +103,6 @@ exports.min = minFunction;
 exports.img = imgFunction;
 exports.server = serverFunction;
 exports.watch = watchFunction;
+
+// default gulp task
+exports.default = series(sassFunction, pugFunction, jsFunction, imgFunction, serverFunction, watchFunction);
