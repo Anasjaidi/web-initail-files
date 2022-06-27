@@ -69,7 +69,7 @@ const	minFunction = function (){
 	return jsminFunction(), cssminFunction(), htmlminFunction(), imgminFunction();
 
 }
-var	server = function(cb)
+var	serverFunction = function(cb)
 {
 	live.init({
 		server : {
@@ -87,9 +87,10 @@ var	sync = function(cb)
 // create tasks 
 exports.sass = sassFunction;
 exports.pug = pugFunction;
-gulp.js = jsFunction;
-gulp.htmlmin = htmlminFunction;
-gulp.jsmin = jsminFunction;
-gulp.cssmin = cssminFunction;
-gulp.min = minFunction;
-gulp.img = imgFunction;
+exports.js = jsFunction;
+exports.htmlmin = htmlminFunction;
+exports.jsmin = jsminFunction;
+exports.cssmin = cssminFunction;
+exports.min = minFunction;
+exports.img = imgFunction;
+exports.server = serverFunction;
