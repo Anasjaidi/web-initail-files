@@ -10,7 +10,9 @@ const	gulp = require('gulp') ,
 		cssmin = require('gulp-clean-css'),
 		prefixer = require('gulp-autoprefixer'),
 		concat = require('gulp-concat'),
-		live = require('browser-sync').create();
+		live = require('browser-sync').create(),
+		postcss = require('gulp-postcss'),
+		tailwind = require('tailwindcss');
 
 // create files and dests vars
 const	pugFiles = './index.pug',
@@ -26,6 +28,9 @@ const	imgFiles = './img/**/*',
 const	sassFunction = function (){
 	return src(sassFiles, {sourcemaps:true})
 			.pipe(sass())
+			.pipe(postcss([
+				tailwind('./tailwind.config.js')
+			]))
 			.pipe(prefixer('last 7 versions'))
 			.pipe(dest(sassDest))
 }
@@ -94,7 +99,7 @@ var	watchFunction = function (){
 
 // create tasks 
 exports.sass = sassFunction;
-exports.pug = pugFunction;
+exports.pug = series(pugFunction, sassFunction);
 exports.js = jsFunction;
 exports.htmlmin = htmlminFunction;
 exports.jsmin = jsminFunction;
